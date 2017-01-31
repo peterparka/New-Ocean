@@ -1,0 +1,49 @@
+
+// =============================================================================
+// Layout
+// =============================================================================
+
+// example usage:
+%container {
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: $space;
+	padding-right: $space;
+
+	@include breakpoint(large) {
+		max-width: 1000px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.container {
+	@extend %container;
+}
+
+
+// All sections
+.block {
+	padding-top: $section-vertical-padding;
+	padding-bottom: $section-vertical-padding / 2;
+
+	header {
+		padding-bottom: $section-vertical-padding/2;
+	}
+
+	h4  {
+	  @extend %headings;
+	  font-size: responsive 24px 33px;
+	  lower-font-range: 360px;
+	  upper-font-range: 1300px;
+	}
+}
+
+.block.leadership-block {
+	padding-bottom: 0;
+}
+
+.get-in-touch, .leadership-block, .different-block, .why-new-ocean, .health-assessment, .help-block {
+
+}

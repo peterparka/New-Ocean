@@ -1,0 +1,76 @@
+.table-responsive {
+	overflow-x: scroll;
+
+	span.scroll-prompt {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: $space/2 $space;
+		color: #fff !important;
+
+		svg {
+			position: relative;
+			top: 5px;
+		}
+		@include breakpoint(medium) {
+				display: none;
+		}
+	}
+
+	table {
+		min-width: 786px;
+		width: 100%;
+		border-collapse: collapse;
+	}
+}
+
+/* -----------------------------------------
+Custom new ocean styles
+----------------------------------------- */
+
+.tabular-content {
+	padding: $space;
+
+	@include breakpoint(medium) {
+		padding: $space;
+	}
+
+	.container {
+		padding: 0;
+	}
+
+	table {
+		border: 1px solid #fff;
+	  font-family: "Lato",sans-serif;
+		color: #fff;
+		margin-top: $space;
+
+		@include breakpoint(medium) {
+			margin-top: 0;
+		}
+	}
+
+	th {
+		border-left: 1px solid #fff;
+
+		&:nth-child(2) {
+			border-left: 0px;
+		}
+	}
+
+	td {
+		padding: $space/2;
+		border: 1px solid #fff;
+		line-height: 1.4;
+		font-weight: 300;
+		font-size: responsive 15px 18px;
+	}
+
+	th,	td.highlight {
+		color: #fff;
+		font-size: responsive 16px 22px;
+		font-weight: 600;
+		padding: $space/2;
+	}
+}

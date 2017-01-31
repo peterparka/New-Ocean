@@ -1,0 +1,20 @@
+// =============================================================================
+//  Google fonts
+// =============================================================================
+
+// @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+// =============================================================================
+//  Font Face
+// =============================================================================
+
+@font-face {
+ font-family: 'Lato';
+ src:url('/wp-content/themes/new-ocean/fonts/font.otf');
+ src:url('/wp-content/themes/new-ocean/fonts/font.eot?#iefix') format('embedded-opentype'),
+     url('/wp-content/themes/new-ocean/fonts/Lato-Regular.ttf') format('truetype'),
+     url('/wp-content/themes/new-ocean/fonts/font.woff') format('woff'),
+     url('/wp-content/themes/new-ocean/fonts/font.svg#font-icons') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}

@@ -1,0 +1,127 @@
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	padding: 0;
+	background-color: rgba( white, 0.8);
+	font-family: "Lato", sans-serif;
+	z-index: 100;
+	overflow: hidden;
+	transition: .7s ease-in-out;
+
+	> div {
+		@extend %container;
+	}
+
+	@include breakpoint(large) {
+		position: fixed;
+	}
+
+	.col-6 {
+		padding: 0;
+
+		@include breakpoint(xlarge) {
+			padding: 0;
+		}
+	}
+
+	> div {
+		height: 100%;
+	}
+
+	img {
+		max-width: 200px;
+		width: 100%;
+	}
+
+	ul {
+		// display: none;
+		// what it looks like in view on mobile
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		background-color: $light-gray;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		padding-top:	$space*2;
+		float: right;
+
+		// moves menu off screen
+		transition: .5s transform ease-in-out;
+		transform: translateY(-100%);
+
+		// when the browser gets to 1000px wide do this
+		@include breakpoint(large) {
+			padding-top: 0;
+			position: relative;
+			height: auto;
+			width: auto;
+			background-color: transparent;
+			display: flex;
+			transform: translateY(0%);
+		}
+
+		// add styles for mobile menu
+		li {
+			text-align: center;
+			padding-bottom: $space;
+			padding-top: 30px;
+			border-bottom: 1px solid lightgray;
+
+			@include breakpoint(large) {
+				display: inline;
+				color: #435464;
+				padding: ( $space / 3 ) * 2;
+				border-bottom: none;
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+
+			a {
+				font-size: 24px;
+
+				@include breakpoint(medium) {
+					font-size: 28px;
+				}
+
+				@include breakpoint(large) {
+					font-size: 18px; // ???
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// nav
+	// when class in-active is added to this nav tag do this
+	&.is-active {
+		overflow: visible;
+		opacity: 1;
+		// moves menu back to original position
+
+		ul {
+			transform: translateY(0%);
+			position: fixed;
+			overflow: hidden;
+
+			@include breakpoint(large) {
+				position: relative;
+			}
+		}
+	}
+
+	@include breakpoint(large) {
+		.hamburger {
+			display: none;
+		}
+	}
+}

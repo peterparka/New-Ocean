@@ -1,0 +1,731 @@
+.explore {
+	width: 100%;
+	font-family: "Lato", sans-serif;
+	overflow: hidden;
+
+	// HERO
+	.hero {
+
+		@include centered-image-container(100%, 100%);
+		// padding: 0; <--- amazing
+		padding: 0; // <--- amazing
+		position: relative;
+		height: 100vh;
+
+		.hero__content {
+			display: table;
+			@extend %container;
+			position: relative;
+			top: 0;
+			width: 80%;
+			height: 100%;
+			margin: 0 auto;
+			padding-top: $space*3;
+			text-align:center;
+    		z-index: 9;
+
+    		@include breakpoint(medium) {
+    			width: 60%;
+    		}
+
+    		> div {
+    			display: table-cell;
+    			vertical-align: middle;
+    		}
+
+			.fullscreen-video {
+
+			}
+
+			p {
+				padding-top: 20px;
+				color: #fff;
+				max-width: 40rem;
+				margin: 0 auto;
+				font-size: responsive 16px 22px;
+				lower-font-range: 360px;
+				upper-font-range: 1000px;
+			}
+			h1 {
+				color: #fff;
+				max-width: 65rem;
+			}
+			div {
+				padding-bottom: $space;
+				a {
+					color: #fff;
+					border: 1px solid #fff;
+					padding: $space/2 5% $space/2 5%;
+					border-radius: 10px;
+					font-weight: 100;
+					font-size:22px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	// @peter - avoid styling <section> element. Currently if someone was to add an extra section in between two of yours all the styling would break
+	// also doesn't give any clue what the section is.
+
+	//Better to name sections e.g.
+
+	// help-block {
+
+	//}
+
+	// HOW WE CAN HELP
+	.help-block {
+		// margin-top: 10%;
+
+		img {
+			margin: 0 auto;
+			padding-bottom: $space*2;
+		}
+
+		h4 {
+			text-align: center;
+			padding-bottom: $space;
+		}
+
+		h5 {
+			padding-bottom: 8px;
+			text-align: center;
+		}
+
+		p {
+			text-align: center;
+			padding-bottom: $space*2;
+		}
+
+		.icon-list {
+			@extend %unstyled-list;
+
+			> li {
+				margin-bottom: $space/3;
+			}
+		}
+
+		.image-container, .text-container {
+			display: block;
+			width: 100%;
+			vertical-align: middle;
+			padding-left: $space;
+			padding-right: $space;
+
+			@include breakpoint(medium) {
+				display: inline-block;
+			}
+		}
+
+		.image-container {
+
+			@include breakpoint(medium) {
+				width: 25%;
+			}
+		}
+
+		.text-container {
+
+			@include breakpoint(medium) {
+				width: 74%;
+
+				p {
+					text-align: left;
+				}
+
+				h5 {
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	// HEALTH ASSESSMENTS
+	.health-assessment {
+		padding: $space 0;
+		background: #435464;
+
+		.background-image {
+			@include centered-image-container(100%, 100%);
+
+			> img {
+				position: absolute;
+			}
+		}
+
+		h4 {
+			padding-bottom: $space/3;
+
+
+			@include breakpoint(medium) {
+
+			}
+		}
+
+		.text-container, .image-container {
+			display: block;
+			position: relative;
+			width: 100%;
+			z-index: 10;
+			color: #fff;
+
+			@include breakpoint(medium) {
+				display: inline-block;
+				width: 49.5%;
+				vertical-align: middle;
+			}
+		}
+
+		.text-container {
+			text-align: center;
+
+			@include max-breakpoint(medium) {
+				margin-bottom: $space;
+			}
+			@include breakpoint(medium) {
+			text-align: left;
+			}
+		}
+
+		.image-container {
+			font-size: 21px; // ??
+
+			a {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: inline-block;
+				border: 1px solid #fff;
+				border-radius: 8px;
+				padding: $space/3 7px;
+				transform: translate(-50%, -50%);
+
+
+
+				@include breakpoint(large) {
+				padding: $space/3 25px;
+				}
+
+
+			}
+
+			img {
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+
+
+				@include breakpoint(medium) {
+					// max-width: 80%;
+
+				}
+				@include breakpoint(large) {
+					// max-width: 100%;
+
+				}
+			}
+		}
+
+	}
+
+	// WHY NEW OCEAN
+	.why-new-ocean {
+		@include centered-image-container(100%, 100%);
+		padding: 0;
+
+		div {
+			text-align: center;
+			padding-top: $space*4;
+			padding-bottom: $space*4;
+			color: #fff;
+			z-index: 10;
+			position: relative;
+
+			h4 {
+				padding-bottom: $space;
+			}
+
+			p {
+				padding-bottom: 1rem;
+			}
+		}
+	}
+
+	// HOW WE'RE DIFFERENT
+	.different-block {
+
+		div:nth-child(1) {
+			text-align: center;
+			padding-bottom: $space*2;
+			h4 {
+				padding-bottom: $space;
+			}
+			p {
+				max-width: 25rem;
+				margin: 0 auto;
+				@include breakpoint(medium) {
+						max-width: 45rem;
+				}
+				@include breakpoint(large) {
+						max-width: 50rem;
+				}
+			}
+		}
+
+		article {
+			padding: 0 20px 0 20px;
+			text-align: center;
+
+			@include breakpoint(medium) {
+				padding: 0 75px 0 75px;
+			}
+
+			p {
+				padding-bottom: $space*2;
+			}
+		}
+
+		img {
+			padding-bottom: $space/3;
+			display: inline;
+		}
+
+	}
+
+	// LEADERSHIP
+	.leadership-block {
+		padding-bottom: 0;
+
+		.container {
+			margin: 0;
+		}
+
+		header {
+			padding-left: $space;
+			padding-right: $space;
+		}
+
+		> div {
+			text-align: center;
+
+			@include max-breakpoint(large) {
+				padding: 0;
+			}
+
+			h4 {
+				padding-bottom: $space;
+				color: $blue;
+			}
+			p{
+				color: $blue;
+				max-width: 70rem;
+				margin: 0 auto;
+			}
+		}
+
+		ul {
+			width: 100%;
+			padding: 0;
+			list-style: none;
+
+			$arrow-width: 20px;
+
+			li:nth-child(odd) {
+
+				@include max-breakpoint(large) {
+					> div {
+						right: 0;
+					}
+				}
+
+				article {
+					.bio {
+						p{font-size: 18px;}
+					}
+					&:before {
+						@include arrow('right', $light-blue, $arrow-width);
+						right: -$arrow-width;
+					}
+				}
+			}
+
+			li:nth-child(even) {
+				flex-direction: row-reverse;
+
+				@include max-breakpoint(large) {
+					> div {
+						left: 0;
+					}
+				}
+
+				article {
+					.bio {
+						p{font-size: 18px;}
+					}
+					&:before {
+						@include arrow('left', $light-blue, $arrow-width);
+						left: -$arrow-width;
+					}
+				}
+			}
+
+			li {
+				display: flex;
+				position: relative;
+				width: 100%;
+				padding: 0;
+
+				@include breakpoint(large) {
+					padding: 0;
+					overflow:hidden;
+
+					&:hover {
+						article{
+							transform: translateY(0%);
+							transition: .5s all ease-in-out;
+							opacity: 1;
+							background-color: rgba(8, 80, 114, .5);
+						}
+					}
+				}
+
+				&:after { // @todo - what is this?
+					clear: both;
+					float: none;
+				}
+
+				> div, article {
+					width: 50%;
+					height: 100%;
+				}
+
+				> div { // Image container
+					padding: 0;
+
+					@include max-breakpoint(large) {
+						@include centered-image-container(50%, 100%);
+						position: absolute;
+						top: 0;
+					}
+
+					@include breakpoint(large) {
+						width: 100%;
+						height: 100%;
+					}
+
+					img {
+						height: auto;
+
+						@include breakpoint(medium) {
+							height: auto;
+						}
+						@include breakpoint(large) {
+							width: 100%;
+						}
+					}
+				}
+
+				article {
+					display: block;
+					position: relative;
+					width: 50%;
+					height: auto;
+					padding: $space $space/3;
+					background-color: $light-blue;
+					text-align: center;
+
+					@include breakpoint(large) {
+						display: table;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 250px;
+						transition: .7s all ease-in-out;
+						transform: translateY(100%);
+						opacity: 0;
+						padding: $space/3;
+					}
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: calc(50% - #{$arrow-width});
+					}
+
+					div {
+						display: table-cell;
+						vertical-align: bottom;
+						padding: 0;
+
+						h5, p, a {
+							color: #fff;
+						}
+
+						h5 {
+							font-size: responsive 16px 22px;
+							font-weight: bold;
+						}
+
+						p {
+							padding-bottom: $space/3;
+							line-height: 1.2;
+						}
+
+						a {
+							font-size: 16px;
+							text-decoration: underline;
+
+							@include breakpoint(medium) {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// POP UP CONTENT
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 999;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			height: 100vh;
+			width: 100vw;
+
+			.modal-background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(8, 80, 114, .5);
+				z-index: 3;
+			}
+
+			.scroll-content {
+				height: 100%;
+				overflow: scroll;
+			}
+
+			.close-button {
+				position: absolute;
+        		right: 10px;
+				top: 10px;
+				width: 40px;
+    			height: 40px;
+				border: none;
+				background: $medium-gray;
+				border-radius: 50%;
+				border: 0;
+				outline: 0;
+				z-index: 100;
+
+
+				img {
+					max-width: 100%;
+				}
+			}
+
+			.casual-photo {
+				// width: 600px;
+				// height: 300px;
+				overflow: hidden;
+				padding: 0;
+
+				img {
+					width: 100%;
+					height: auto;
+					overflow: hidden;
+				}
+			}
+
+			article {
+				position: relative;
+				width: 100%;
+				height: 100%;
+
+				background-color: #fff;
+				border-radius: 5px;
+				margin: 0 auto;
+				padding: 30px 30px 0 30px;
+				box-shadow: 0px 1px 3px 0px rgba(194,194,194,1);
+				z-index: 6;
+
+				@include breakpoint(large) {
+					max-width: 700px;
+					height: 110%;
+					top: -20px;
+				}
+
+				.contact-me {
+					padding-top: $space/2;
+
+					a {
+						border: 1px solid $gray;
+						border-radius: 10px;
+						padding: 3px $space;
+						font-size: 16px;
+					}
+				}
+
+				.bio {
+					display: block;
+					padding-bottom: $space/2;
+					padding: 0 $space/3 $space/2 $space/3;
+					margin: 0 auto;
+					margin-top: 30px;
+
+					.bio-vid {
+						@include fluid-media-wrapper();
+						text-align: center;
+						margin-bottom: $space*2;
+
+						iframe {
+							max-width: 100%;
+						}
+					}
+				}
+
+				h4 {
+					color: $blue;
+				}
+
+				h5 {
+					padding-top:$space;
+					padding-bottom: 10px;
+					color: $blue;
+				}
+
+				h4 {
+					color: #919191;
+				}
+
+				p {
+					padding-bottom: $space;
+					text-align: left;
+					color: #919191;
+				}
+
+				section {
+					display: flex;
+					padding-top: $space;
+					padding-bottom: $space;
+					border-top: 1px solid lightgray;
+
+					a {
+						color: $blue;
+						margin-right: $space;
+						padding: 0 $space/2;
+						border: 1px solid $gray;
+						font-size: 18px;
+						border-radius: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	// GET IN TOUCH
+	.get-in-touch {
+
+		> div {
+			text-align: center;
+
+			h4 {
+				padding-bottom: $space;
+				text-align: center;
+			}
+		}
+	}
+}
+
+// PRIVATE POLICY
+.privacy {
+	font-family: "Lato", sans-serif;
+
+	h1 {
+		text-align: center;
+		padding-bottom: $space*2;
+	}
+
+	div {
+		margin: 0 auto;
+		max-width: 85rem;
+
+		p {
+			padding-bottom: $space/2;
+			text-align: center;
+
+			@include breakpoint(large) {
+				text-align: left;
+			}
+		}
+	}
+
+	ol {
+		padding-top: $space*2;
+		max-width: 20rem;
+		margin: 0 auto;
+		font-size: 18px;
+		li {
+			padding-bottom: $space;
+			ul {
+				list-style-type: disc;
+				li {
+					padding-bottom: none;
+				}
+			}
+		}
+		@include breakpoint(small) {
+
+			max-width: 60rem;
+		}
+
+		@include breakpoint(large) {
+
+			max-width: 88rem;
+		}
+
+	}
+
+	h4 {
+		text-align: center;
+		padding-top: $space;
+		padding-bottom: $space*2;
+	}
+
+	@include breakpoint(large) {
+
+	}
+
+}
+
+// SITE MAP
+.sitemap {
+	font-family: "Lato", sans-serif;
+	h1 {
+		text-align: center;
+	}
+
+	div{
+	text-align: center;
+
+	ul{
+		padding-top: $space*2;
+		margin: 0 auto;
+		list-style-type: none;
+		li {
+			padding-bottom: $space;
+			a {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+}

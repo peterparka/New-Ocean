@@ -1,0 +1,96 @@
+// **************************************** //
+// html, body, .wrapper, section, .row
+// html, body, .wrapper, section, .row-no-max
+
+html, body {
+		position: relative;
+	background-color: #fff;
+}
+
+// site wrapper
+.wrapper{
+	position: relative;
+	margin-bottom: 0;
+	padding-top: $mb-nav-height;
+
+	@include breakpoint(large) {
+		padding-top: $nav-height;
+	}
+}
+
+// normal row // site widths are set here using the row class
+.row {
+	width: 99%;
+	margin: 0 auto;
+
+	@include breakpoint(medium) {
+		width: 88%;
+	}
+
+	@include breakpoint(large) {
+		width: 82%;
+	}
+
+	@include breakpoint(xlarge) {
+		width: 80%;
+		max-width: 1800px;
+	}
+
+}
+
+
+// row no max width
+.row-no-max {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	height: inherit;
+	// remove gutter padding from gridlex
+	[class*="col-"], .col {padding: 0;}
+}
+
+
+// Section wrapper
+// @peter - avoid <section> styling
+
+.horizontal-icons-block, .vertical-icons-block {
+
+	//styles here
+}
+
+section {
+	position: relative;
+
+	// section header
+	.section-header {
+		text-align: center;
+		margin-bottom: $space*2;
+
+		h2 {
+			margin-bottom: 0;
+		}
+	}
+
+	&.z-top	{
+		// increase by 1
+		z-index: 5;
+	}
+
+	// desktop section styles
+  	@include breakpoint(large) {
+        		padding: $space *3 0;
+      }
+
+	// xl desktop section styles
+			@include breakpoint(xlarge) {
+						padding: $space *4 0;
+			}
+	}
+
+img {
+	display: block;
+}
+
+.grid-image {
+	width: 100%;
+}

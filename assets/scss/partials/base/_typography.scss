@@ -1,0 +1,271 @@
+// =============================================================================
+//  Typography Settings
+// =============================================================================
+
+
+// % means silent class needs to be @extended to use
+%headings {
+  font-family: "Lato",sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing:0px;
+  line-height: 1.2em;
+  // margin-bottom: $space;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+ }
+
+%paragraph-text {
+  font-family: "Lato",sans-serif;
+  font-size: responsive;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4em;
+  -webkit-font-smoothing: antialiased;
+ }
+
+
+// h1 /////////////////////////////////////////
+h1 {
+  @extend %headings;
+  font-size: responsive 26px 40px;
+  letter-spacing:-1px;
+  line-height: 1.1em;
+  lower-font-range: 360px;
+  upper-font-range: 1000px;
+
+  &.bold {
+    font-weight: 1200;
+  }
+}
+
+// h2 /////////////////////////////////////////
+h2 {
+  @extend %headings;
+  font-size: responsive 34px 90px;
+  letter-spacing: -2px;
+  line-height: 1.3em;
+  lower-font-range: 360px;
+  upper-font-range: 1900px;
+
+}
+
+
+// h3 /////////////////////////////////////////
+h3  {
+  @extend %headings;
+  font-size: responsive 28px 60px;
+  lower-font-range: 360px;
+  upper-font-range: 1900px;
+}
+
+// h4 /////////////////////////////////////////
+h4  {
+  @extend %headings;
+  font-size: responsive 22px 50px;
+  lower-font-range: 360px;
+  upper-font-range: 1900px;
+
+  &.h4-small {
+    font-size: responsive 14px 21px;
+  }
+}
+
+
+// h5 used for large p text in headers
+h5 {
+  @extend %headings;
+  font-size: responsive 18px 32px;
+  font-weight: 600;
+  lower-font-range: 360px;
+  upper-font-range: 1900px;
+}
+
+
+// LI //////////////////////////////////////////
+li {
+
+}
+
+// P //////////////////////////////////////////
+p, .simple-page-content li {
+    // @extend .rhythm-s;
+    @extend %paragraph-text;
+    font-size: responsive 14px 22px;
+    line-height: 1.5;
+    lower-font-range: 360px;
+    // margin-bottom: $space;
+    upper-font-range: 2100px;
+
+    &.p-large {
+      // @extend .rhythm-m;
+      font-size: responsive 18px 36px;
+      font-weight: 300;
+    }
+
+    &.p-xlarge {
+      font-size: responsive 28px 45px;
+      font-weight: 300;
+
+      &.bold {
+      	 font-weight: 600;
+      }
+    }
+    &.p-thin {
+      font-size: responsive 14px 36px;
+      font-weight: 100;
+    }
+    &.p-small {
+      font-size: responsive 14px 18px;
+    }
+
+    a {
+      font-size: inherit;
+      color: inherit;
+    }
+}
+
+
+// h5 used for large p text in headers
+h6 {
+  @extend %headings;
+  font-size: responsive 12px 16px;
+  line-height: 1.6;
+  lower-font-range: 360px;
+  upper-font-range: 1900px;
+
+}
+
+
+a {
+  font-family: "Lato",sans-serif;
+  font-size: responsive 16px 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  lower-font-range: 360px;
+  text-decoration: none;
+
+
+  &.btn {
+    font-size: responsive 16px 20px;
+    lower-font-range: 360px;
+  }
+}
+
+
+span {
+    font-family: "Lato",sans-serif;
+    font-size: responsive 12px 14px;
+}
+
+
+
+.text-block	 {
+
+	text-align: center;
+
+  .col, [class*="col-"] {z-index: 3;}
+
+	@include breakpoint(large) {
+
+		p {
+			margin: 0 auto;
+
+      @include breakpoint(large)  {
+        			max-width: 70%;
+      }
+		}
+	}
+}
+
+
+.accent {
+	border-radius: 1px;
+	display: block;
+	height: 8px;
+	margin: 0 auto $space auto;
+	width:150px;
+}
+
+
+
+
+
+
+// BASELINE
+
+// See https://pilot.co/blog/implementing-baseline-rhythm-in-css/
+
+/*
+ * Config
+*/
+
+$line-height: 35px;
+
+$font-sizes:  (s: 18px, m:24px, l: 36px, xl: 50px);
+$cap-heights: (s: 0.8,  m: 0.8,  l: 0.68, xl: 0.68);
+
+// Accepts `s`, `m`, `l`, or `xl`
+@function rhythm-shift($size-name) {
+  $font-size: map-get($font-sizes, $size-name);
+  $cap-height: map-get($cap-heights, $size-name);
+
+  $offset: ($line-height - $cap-height * $font-size) / 2;
+  @return round($offset);
+}
+
+/*
+ * Solution 3
+*/
+
+$offset-s: rhythm-shift(s);
+$offset-m: rhythm-shift(m);
+
+.rhythm-s {
+  font-size: map-get($font-sizes, s);
+  margin-top: $offset-s;
+  margin-bottom: -1 * $offset-s;
+}
+
+.rhythm-m {
+  font-size: map-get($font-sizes, m);
+  margin-top: $offset-m;
+  margin-bottom: -1 * $offset-m;
+}
+
+/*
+ * Boxes with background
+*/
+
+.background {
+  background: rgba(blue, 0.15);
+}
+
+.proper-background {
+  background: rgba(blue, 0.15);
+  padding: 0.1px 0;
+}
+
+/*
+ * Utility classes
+*/
+
+.pt-1 {
+  padding-top: $line-height;
+}
+
+.pb-1 {
+  padding-bottom: $line-height;
+}
+
+/*
+ * Meta
+*/
+
+html {
+  background-size: 1px $line-height;
+}
+
+body {
+  line-height: $line-height;
+}

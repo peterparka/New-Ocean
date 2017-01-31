@@ -1,0 +1,20 @@
+// =============================================================================
+// Spacing - for margin and padding consistency
+// =============================================================================
+
+$space: 30px;
+
+$section-vertical-padding: $space*3;
+
+// For a common border radius
+$radius: 2px;
+
+
+.xpad-top {
+  padding-top: $space * 6;
+}
+
+
+.no-pad {
+  padding: 0;
+}

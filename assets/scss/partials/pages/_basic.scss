@@ -1,0 +1,62 @@
+nav + .simple-page-content {
+	padding-top: $space*3;
+
+
+		@include breakpoint(large) {
+			padding-top: $space*5;
+		}
+}
+
+.simple-page-content {
+		padding: $space/2;
+
+
+	@include breakpoint(medium) {
+		padding: $space  $space/2;
+	}
+
+	@include breakpoint(medium) {
+		padding: $space  $space/2;
+	}
+
+	div:empty() {
+		display: none;
+		margin-bottom: 0;
+	}
+
+	h1,h2,h3,h4 {
+		display: block;
+		margin-bottom: $space;
+		text-align: left;
+		color: $blue;
+	}
+
+	h4 {
+		margin-bottom: $space/4 webs;
+		font-size: responsive 18px 20px;
+	}
+
+	div, ul, ol {
+		margin-bottom: $space;
+		color: $dark-gray;
+	}
+
+	p {
+		margin-bottom: $space/2;
+		color: $dark-gray;
+		line-height: 1.6;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	li {
+		margin-bottom: $space/3;
+		color: $dark-gray;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}

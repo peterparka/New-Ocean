@@ -1,0 +1,17 @@
+
+// =============================================================================
+// Buttons
+// =============================================================================
+
+.btn {
+
+    display: inline-block;
+    min-width: 200px;
+    padding: $space/2;
+    background-color: $lb-c3;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 $lb-c3-dark;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+}

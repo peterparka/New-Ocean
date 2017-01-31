@@ -1,0 +1,28 @@
+
+// =============================================================================
+// Base styles
+// =============================================================================
+
+body {
+	width: 100%;
+	background: $base-background-color;
+	color: $base-font-color;
+}
+
+// sort general image space issues
+img {
+	display: block;
+}
+
+// Box sizing reset
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a {
+	@extend %unstyled-anchor;
+}

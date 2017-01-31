@@ -1,0 +1,12 @@
+.bg-image {
+
+    img:first-child {
+      height: 140%;
+      width: auto;
+
+      @include breakpoint(medium) {
+        height: auto;
+        width: 100%;
+      }
+    }
+}

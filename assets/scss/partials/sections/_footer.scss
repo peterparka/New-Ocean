@@ -1,0 +1,124 @@
+
+.block.contact-details {
+	width: 100%;
+	background-color: #435464;
+	color: #fff;
+	padding-top: $section-vertical-padding;
+	padding-bottom: $section-vertical-padding;
+
+	article {
+		width: 100%;
+		padding-left: $space;
+		padding-right: $space;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include breakpoint(medium) {
+			width: auto;
+		}
+
+		@include max-breakpoint(medium) {
+
+			&:first-child {
+				margin-bottom: $space;
+			}
+		}
+
+		> div {
+			display: flex;
+		}
+
+		img {
+			align-self: flex-start;
+			display: block;
+			padding-right: 1em;
+			padding-top: 8px;
+		}
+
+		@include breakpoint(large) {
+			padding: 0 $space;
+			font-size: 18px;
+		}
+	}
+
+	.address {
+		padding-bottom: $space;
+		max-width: 100%;
+	}
+
+	.phone {
+		padding-bottom: $space/2;
+	}
+
+	.email {
+		// a:hover {
+		// 	text-decoration: underline;
+		// }
+    a {
+      text-decoration: underline;
+    }
+	}
+}
+
+footer {
+
+	.inside-container {
+		padding-top: $space*3;
+		padding-bottom: $space*3;
+	}
+
+	div:nth-child(3) {
+		padding-bottom: 5%;
+	}
+
+	section {
+		background-color: #fff;
+		padding: 20px 0;
+
+		ul {
+			display: flex;
+			list-style-type: none;
+
+			li {
+				color: $blue;
+				padding: 0 $space/3;
+				border-right: .5px solid $blue;
+				font-size: 14px;
+				font-weight: 100;
+
+        a:hover{
+          text-decoration: underline;
+        }
+
+				@include max-breakpoint(medium) {
+					width: 100%;
+					text-align: center;
+					border: 0;
+				}
+
+				&:last-child { border-right: 0 }
+
+				@include breakpoint(small) {
+					padding: 0 $space;
+					font-size: 18px;
+				}
+
+
+			}
+			a:nth-child(2) {
+				li {
+				border-right: none;
+				}
+			}
+		}
+	}
+
+	p {
+		a {
+			text-decoration: underline;
+		}
+	}
+
+
+}
